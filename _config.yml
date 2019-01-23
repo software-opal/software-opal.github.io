@@ -5,11 +5,7 @@
 # Site
 title: Opal Symes
 subtitle: I might write about what I do ... I should probably find out what that is first
-description: |
-  Hi, I'm a software developer who writes Python, Puppet and PHP during the
-  day; and wrangles Rust at night. I also enjoy cooking, sewing, bad puns,
-  and taking on waaay too many projects. In between all of this I fight
-  battles against my own brain, some of which I win.
+description: Hi, I'm a software developer who writes Python, Puppet and PHP during the day; and wrangles Rust at night. I also enjoy cooking, sewing, bad puns, and taking on waaay too many projects. In between all of this I fight battles against my own brain, some of which I win.
 keywords:
 author: Opal Symes
 language: en
@@ -80,16 +76,38 @@ pagination_dir: page
 theme: cactus
 theme_config:
   colorscheme: classic
+  page_width: 56
+
+  tags_overview: true
+  posts_overview:
+    show_all_posts: false
+    post_count: 5
+  post:
+    show_updated: true
+
+
+  projects_url: https://github.com/software-opal
   social_links:
     github: https://github.com/software-opal
     twitter: https://twitter.com/software_opal
     mail: mailto:code@opal.codes
-  posts_overview:
-    show_all_posts: false
-    post_count: 5
   nav:
     Home: /
     Writing: /archives/
+  logo:
+    enabled: true
+    width: 60
+    height: 60
+    url: /icons/logo.png
+  favicon:
+    desktop:
+      url: /icons/favicon.ico
+    android:
+      url: /icons/favicon-192x192.png
+    apple:
+      url: /icons/apple-touch-icon.png
+  rss:
+
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
