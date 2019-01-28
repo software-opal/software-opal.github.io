@@ -85,7 +85,6 @@ theme_config:
   post:
     show_updated: true
 
-
   projects_url: https://github.com/software-opal
   social_links:
     github: https://github.com/software-opal
