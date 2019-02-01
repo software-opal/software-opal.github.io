@@ -39,13 +39,13 @@ HUS files use a list of 2-byte color indices to express a progression of colors 
 | ------ | ---------------- |
 | `0x00` | Black            |
 | `0x01` | Blue             |
-| `0x02` | Green            |
+| `0x02` | Light Green      |
 | `0x03` | Red              |
-| `0x04` | Magenta (Purple) |
+| `0x04` | Purple           |
 | `0x05` | Yellow           |
 | `0x06` | Gray             |
 | `0x07` | Light Blue       |
-| `0x08` | Light Green      |
+| `0x08` | Green            |
 | `0x09` | Orange           |
 | `0x0A` | Pink             |
 | `0x0B` | Brown            |
@@ -53,20 +53,20 @@ HUS files use a list of 2-byte color indices to express a progression of colors 
 | `0x0D` | Dark Blue        |
 | `0x0E` | Dark Green       |
 | `0x0F` | Dark Red         |
-| `0x10` | ???              |
-| `0x11` | Light Red        |
-| `0x12` | Dark Purple      |
-| `0x13` | Light Purple     |
-| `0x14` | Dark Yellow      |
-| `0x15` | Light Yellow     |
-| `0x16` | Dark Grey        |
-| `0x17` | Light Grey       |
-| `0x18` | Dark Orange      |
-| `0x19` | Light Orange     |
-| `0x1A` | Dark Pink        |
-| `0x1B` | Light Pink       |
-| `0x1C` | Dark Brown       |
-| `0x1D` | Light Brown      |
+| `0x10` | Light Red        |
+| `0x11` | Dark Purple      |
+| `0x12` | Light Purple     |
+| `0x13` | Dark Yellow      |
+| `0x14` | Light Yellow     |
+| `0x15` | Dark Gray        |
+| `0x16` | Light Gray       |
+| `0x17` | Dark Orange      |
+| `0x18` | Light Orange     |
+| `0x19` | Dark Pink        |
+| `0x1A` | Light Pink       |
+| `0x1B` | Dark Brown       |
+| `0x1C` | Light Brown      |
+
 
 ### VIP Color table information (VIP Only)
 
