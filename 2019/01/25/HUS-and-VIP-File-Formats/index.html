@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="This file has been taken from Jason Weiler and updated using information from Embroidermodder and KDE’s Liberty project as well as some of my own work. File Header Information (Same for HUS &amp; VIP)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HUS and VIP File Formats">
+<meta property="og:url" content="https://opal.codes/2019/01/25/HUS-and-VIP-File-Formats/index.html">
+<meta property="og:site_name" content="Opal Symes">
+<meta property="og:description" content="This file has been taken from Jason Weiler and updated using information from Embroidermodder and KDE’s Liberty project as well as some of my own work. File Header Information (Same for HUS &amp; VIP)">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-01-25T05:49:03.000Z">
+<meta property="article:modified_time" content="2019-12-29T01:27:07.370Z">
+<meta property="article:author" content="Opal Symes">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/icons/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/icons/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>HUS and VIP File Formats</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/lca2020/">LCA2020</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/01/25/Expanding-on-ArchiveLib/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2019/01/23/A-journey-to-the-center-of-ArchiveLib/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://opal.codes/2019/01/25/HUS-and-VIP-File-Formats/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://opal.codes/2019/01/25/HUS-and-VIP-File-Formats/&text=HUS and VIP File Formats" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://opal.codes/2019/01/25/HUS-and-VIP-File-Formats/&title=HUS and VIP File Formats" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://opal.codes/2019/01/25/HUS-and-VIP-File-Formats/&is_video=false&description=HUS and VIP File Formats" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=HUS and VIP File Formats&body=Check out this article: https://opal.codes/2019/01/25/HUS-and-VIP-File-Formats/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://opal.codes/2019/01/25/HUS-and-VIP-File-Formats/&title=HUS and VIP File Formats" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://opal.codes/2019/01/25/HUS-and-VIP-File-Formats/&title=HUS and VIP File Formats" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://opal.codes/2019/01/25/HUS-and-VIP-File-Formats/&title=HUS and VIP File Formats" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://opal.codes/2019/01/25/HUS-and-VIP-File-Formats/&title=HUS and VIP File Formats" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://opal.codes/2019/01/25/HUS-and-VIP-File-Formats/&name=HUS and VIP File Formats&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://opal.codes/2019/01/25/HUS-and-VIP-File-Formats/&t=HUS and VIP File Formats" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#file-header-information-same-for-hus-vip"><span class="toc-number">1.</span> <span class="toc-text">File Header Information (Same for HUS &amp; VIP)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#color-information"><span class="toc-number">2.</span> <span class="toc-text">Color information</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hus-color-list"><span class="toc-number">2.1.</span> <span class="toc-text">HUS Color list</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vip-color-table-information-vip-only"><span class="toc-number">2.2.</span> <span class="toc-text">VIP Color table information (VIP Only)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stitch-attributes"><span class="toc-number">3.</span> <span class="toc-text">Stitch Attributes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stitch-coordinates"><span class="toc-number">4.</span> <span class="toc-text">Stitch Coordinates</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#acknowledgements"><span class="toc-number">5.</span> <span class="toc-text">Acknowledgements</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        HUS and VIP File Formats
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Opal Symes</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-01-25T05:49:03.000Z" itemprop="datePublished">2019-01-25</time>
+        
+        (Updated: <time datetime="2019-12-29T01:27:07.370Z" itemprop="dateModified">2019-12-29</time>)
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>This file has been taken from <a href="http://www.jasonweiler.com/HUSandVIPFileFormatInfo.html" title="Permalink to HUS and VIP Embroidery File Formats" target="_blank" rel="noopener">Jason Weiler</a> and updated using information from <a href="https://embroidermodder.org" target="_blank" rel="noopener">Embroidermodder</a> and <a href="https://community.kde.org/Projects/Liberty/Introduction" target="_blank" rel="noopener">KDE’s Liberty project</a> as well as some of my own work.</p>
+<h2 id="file-header-information-same-for-hus-vip">File Header Information (Same for HUS &amp; VIP)</h2>
+<p>Note: Multibyte values are stored in <a href="https://en.wikipedia.org/wiki/Endianness#Little-endian" target="_blank" rel="noopener">little-endian</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Offset</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0x00</code></td>
+<td><code>4 bytes</code></td>
+<td>HUS: Can be <code>0x5B 0xAF 0xC8 0x00</code> or <code>0x5D 0xFC 0xC8 0x00</code><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><br>VIP: Always <code>0x5D 0xFC 0x90 0x01</code></td>
+</tr>
+<tr>
+<td><code>0x04</code></td>
+<td><code>4 bytes</code></td>
+<td><code>NumberOfStitches</code> - The total number of stitches defined in this file.</td>
+</tr>
+<tr>
+<td><code>0x08</code></td>
+<td><code>4 bytes</code></td>
+<td><code>NumberOfColors</code> - The total number of colors used in this pattern.</td>
+</tr>
+<tr>
+<td><code>0x0C</code></td>
+<td><code>2 bytes</code> (signed)</td>
+<td>+X hoop-size offset as a positive number (same as +X from DST)</td>
+</tr>
+<tr>
+<td><code>0x0E</code></td>
+<td><code>2 bytes</code> (signed)</td>
+<td>+Y hoop-size offset as a positive number (same as -Y from DST)</td>
+</tr>
+<tr>
+<td><code>0x10</code></td>
+<td><code>2 bytes</code> (signed)</td>
+<td>-X hoop-size offset as a negative number (same as -X from DST)</td>
+</tr>
+<tr>
+<td><code>0x12</code></td>
+<td><code>2 bytes</code> (signed)</td>
+<td>-Y hoop-size offset as a negative number (same as +Y from DST)</td>
+</tr>
+<tr>
+<td><code>0x14</code></td>
+<td><code>4 bytes</code></td>
+<td>Absolute file-offset to SECTION 1 (contains stitch attributes)</td>
+</tr>
+<tr>
+<td><code>0x18</code></td>
+<td><code>4 bytes</code></td>
+<td>Absolute file-offset to SECTION 2 (contains x-coordinates)</td>
+</tr>
+<tr>
+<td><code>0x1C</code></td>
+<td><code>4 bytes</code></td>
+<td>Absolute file-offset to SECTION 3 (contains y-coordinates)</td>
+</tr>
+<tr>
+<td><code>0x20</code></td>
+<td><code>8 bytes</code></td>
+<td>String identifier (I’ve never seen it used)</td>
+</tr>
+<tr>
+<td><code>0x28</code></td>
+<td><code>2 bytes</code></td>
+<td><em>Unknown</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="color-information">Color information</h2>
+<p>As with most embroidery formats, the first color is used for all the stitches up until the first color change; then the 2nd and so on.</p>
+<h3 id="hus-color-list">HUS Color list</h3>
+<table>
+<thead>
+<tr>
+<th>Offset</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0x2A</code></td>
+<td><code>2*NumberOfColors bytes</code></td>
+<td>Color indices</td>
+</tr>
+</tbody>
+</table>
+<p>HUS files use a list of 2-byte color indices to express a progression of colors used in the pattern. This list starts immediately following the header information (offset <code>0x2A</code>) and is always <code>2*NumberOfColors</code> in length. Each colour is defined as <code>0xYY 0x00</code> where <code>YY</code> is a an index in the lookup table below. In theory this <em>could</em> be a <a href="https://en.wikipedia.org/wiki/Endianness#Little-endian" target="_blank" rel="noopener">little-endian</a> index, though given the length of the table in seems unlikely.</p>
+<p>It isn’t clear if there is an accepted set of colors and associated indices, but we’ve experimentally derived the following HUS color table:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Color<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></th>
+<th>Color values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0x00</code></td>
+<td>Black</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#000000"/></svg>&nbsp;#000000</td>
+</tr>
+<tr>
+<td><code>0x01</code></td>
+<td>Blue</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#0000FF"/></svg>&nbsp;#0000FF</td>
+</tr>
+<tr>
+<td><code>0x02</code></td>
+<td>Light Green</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#00FF00"/></svg>&nbsp;#00FF00</td>
+</tr>
+<tr>
+<td><code>0x03</code></td>
+<td>Red</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#FF0000"/></svg>&nbsp;#FF0000</td>
+</tr>
+<tr>
+<td><code>0x04</code></td>
+<td>Purple</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#FF00FF"/></svg>&nbsp;#FF00FF</td>
+</tr>
+<tr>
+<td><code>0x05</code></td>
+<td>Yellow</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#FFFF00"/></svg>&nbsp;#FFFF00</td>
+</tr>
+<tr>
+<td><code>0x06</code></td>
+<td>Gray</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#7F7F7F"/></svg>&nbsp;#7F7F7F</td>
+</tr>
+<tr>
+<td><code>0x07</code></td>
+<td>Light Blue</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#339AFF"/></svg>&nbsp;#339AFF</td>
+</tr>
+<tr>
+<td><code>0x08</code></td>
+<td>Green</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#33CC66"/></svg>&nbsp;#33CC66</td>
+</tr>
+<tr>
+<td><code>0x09</code></td>
+<td>Orange</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#FF7F00"/></svg>&nbsp;#FF7F00</td>
+</tr>
+<tr>
+<td><code>0x0A</code></td>
+<td>Pink</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#FFA0B4"/></svg>&nbsp;#FFA0B4</td>
+</tr>
+<tr>
+<td><code>0x0B</code></td>
+<td>Brown</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#994B00"/></svg>&nbsp;#994B00</td>
+</tr>
+<tr>
+<td><code>0x0C</code></td>
+<td>White</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#FFFFFF"/></svg>&nbsp;#FFFFFF</td>
+</tr>
+<tr>
+<td><code>0x0D</code></td>
+<td>Dark Blue</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#00007F"/></svg>&nbsp;#00007F</td>
+</tr>
+<tr>
+<td><code>0x0E</code></td>
+<td>Dark Green</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#007F00"/></svg>&nbsp;#007F00</td>
+</tr>
+<tr>
+<td><code>0x0F</code></td>
+<td>Dark Red</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#7F0000"/></svg>&nbsp;#7F0000</td>
+</tr>
+<tr>
+<td><code>0x10</code></td>
+<td>Light Red</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#FF7F7F"/></svg>&nbsp;#FF7F7F</td>
+</tr>
+<tr>
+<td><code>0x11</code></td>
+<td>Dark Purple</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#7F007F"/></svg>&nbsp;#7F007F</td>
+</tr>
+<tr>
+<td><code>0x12</code></td>
+<td>Light Purple</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#FF7FFF"/></svg>&nbsp;#FF7FFF</td>
+</tr>
+<tr>
+<td><code>0x13</code></td>
+<td>Dark Yellow</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#C8C800"/></svg>&nbsp;#C8C800</td>
+</tr>
+<tr>
+<td><code>0x14</code></td>
+<td>Light Yellow</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#FFFF99"/></svg>&nbsp;#FFFF99</td>
+</tr>
+<tr>
+<td><code>0x15</code></td>
+<td>Dark Gray</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#3C3C3C"/></svg>&nbsp;#3C3C3C</td>
+</tr>
+<tr>
+<td><code>0x16</code></td>
+<td>Light Gray</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#C0C0C0"/></svg>&nbsp;#C0C0C0</td>
+</tr>
+<tr>
+<td><code>0x17</code></td>
+<td>Dark Orange</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#E83F00"/></svg>&nbsp;#E83F00</td>
+</tr>
+<tr>
+<td><code>0x18</code></td>
+<td>Light Orange</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#FFA541"/></svg>&nbsp;#FFA541</td>
+</tr>
+<tr>
+<td><code>0x19</code></td>
+<td>Dark Pink</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#FF667A"/></svg>&nbsp;#FF667A</td>
+</tr>
+<tr>
+<td><code>0x1A</code></td>
+<td>Light Pink</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#FFCCCC"/></svg>&nbsp;#FFCCCC</td>
+</tr>
+<tr>
+<td><code>0x1B</code></td>
+<td>Dark Brown</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#732800"/></svg>&nbsp;#732800</td>
+</tr>
+<tr>
+<td><code>0x1C</code></td>
+<td>Light Brown</td>
+<td><svg width="10" height="10"><rect width="10" height="10" fill="#AF5A0A"/></svg>&nbsp;#AF5A0A</td>
+</tr>
+</tbody>
+</table>
+<h3 id="vip-color-table-information-vip-only">VIP Color table information (VIP Only)</h3>
+<table>
+<thead>
+<tr>
+<th>Offset</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0x2A</code></td>
+<td>4 bytes</td>
+<td>Sometimes zero; otherwise <code>0x2E + 8*NumberOfColors</code><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></td>
+</tr>
+<tr>
+<td><code>0x2E</code></td>
+<td>4*NumberOfColors bytes</td>
+<td>Encoded color information</td>
+</tr>
+</tbody>
+</table>
+<p>VIP files are more advanced than HUS files in that they actually contain the real 24-bit colors that were intended by the pattern author. The color information is stored as RGB-0 quadruplets, but they’re also encoded with a simple double-XOR scheme. For example:</p>
+<p>Encoded bytes:</p>
+<pre><code>48 70 DD B2  77 07 05 C3  48 0E D6 7A  70 E2 0E 40
+4B 0A FA 1E  C5 64 DB B3  EE 36 C9 7D
+</code></pre>
+<p>becomes:</p>
+<pre><code>66 BA 49 00  FD D9 DE 00  F0 F0 F0 00  F7 38 66 00
+7D 6F 00 00  FE BA 35 00  13 4A 46 00
+</code></pre>
+<p>The decoding algorithm is actually quite simple:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">BYTE prevByte = 0</span><br><span class="line">BYTE tmpByte = 0;</span><br><span class="line">for (i=0; i &lt; NumberOfColors*4; ++i)</span><br><span class="line">&#123;</span><br><span class="line">   tmpByte = INPUT[i] ^ TABLE[i];</span><br><span class="line">   OUTPUT[i] = tmpByte ^ prevByte;</span><br><span class="line">   prevByte = INPUT[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>where:</p>
+<p><code>INPUT</code> and <code>OUTPUT</code> represent the encoded file bytes and the decoded output bytes <code>TABLE</code> represents a fixed set of values defined as:</p>
+<pre><code>2E 82 E4 6F  38 A9 DC C6  7B B6 28 AC  FD AA 8A 4E
+76 2E F0 E4  25 1B 8A 68  4E 92 B9 B4  95 F0 3E EF
+F7 40 24 18  39 31 BB E1  53 A8 1F B1  3A 07 FB CB
+E6 00 81 50  0E 40 E1 2C  73 50 0D 91  D6 0A 5D D6
+8B B8 62 AE  47 00 53 5A  B7 80 AA 28  F7 5D 70 5E
+2C 0B 98 E3  A0 98 60 47  89 9B 82 FB  40 C9 B4 00
+0E 68 6A 1E  09 85 C0 53  81 D1 98 89  AF E8 85 4F
+E3 69 89 03  A1 2E 8F CF  ED 91 9F 58  1E D6 84 3C
+09 27 BD F4  C3 90 C0 51  1B 2B 63 BC  B9 3D 40 4D
+62 6F E0 8C  F5 5D 08 FD  3D 50 36 D7  C9 C9 43 E4
+2D CB 95 B6  F4 0D EA C2  FD 66 3F 5E  BD 69 06 2A
+03 19 47 2B  DF 38 EA 4F  80 49 95 B2  D6 F9 9A 75
+F4 D8 9B 1D  B0 A4 69 DB  A9 21 79 6F  D8 DE 33 FE
+9F 04 E5 9A  6B 9B 73 83  62 7C B9 66  76 F2 5B C9
+5E FC 74 AA  6C F1 CD 93  CE E9 80 53  03 3B 97 4B
+39 76 C2 C1  56 CB 70 FD  3B 3E 52 57  81 5D 56 8D
+51 90 D4 76  D7 D5 16 02  6D F2 4D E1  0E 96 4F A1
+3A A0 60 59  64 04 1A E4  67 B6 ED 3F  74 20 55 1F
+FB 23 92 91  53 C8 65 AB  9D 51 D6 73  DE 01 B1 80
+B7 C0 D6 80  1C 2E 3C 83  63 EE BC 33  25 E2 0E 7A
+67 DE 3F 71  14 49 9C 92  93 0D 26 9A  0E DA ED 6F
+A4 89 0C 1B  F0 A1 DF E1  9E 3C 04 78  E4 AB 6D FF
+9C AF CA C7  88 17 9C E5  B7 33 6D DC  ED 8F 6C 18
+1D 71 06 B1  C5 E2 CF 13  77 81 C5 B7  0A 14 0A 6B
+40 26 A0 88  D1 62 6A B3  50 12 B9 9B  B5 83 9B 37
+</code></pre>
+<h2 id="stitch-attributes">Stitch Attributes</h2>
+<p>Section 1 defines the per-stitch attributes of the pattern. This section is generally much smaller than the other two, but that’s only because the data in this section compresses more readily than in the others. The section is compressed using the proprietary ArchiveLib compression library made by <a href="http://www.greenleafsoft.com" target="_blank" rel="noopener">Greenleaf Software</a>. This library supports several different compression schemes, but the one used in this case is called AL_GREENLEAF_LEVEL_4. Once decompressed, the data should be exactly NumberOfStitches bytes in length with each byte sequentially representing one stitch of the pattern.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Stitch type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0x80</code></td>
+<td>Normal stitch</td>
+</tr>
+<tr>
+<td><code>0x81</code></td>
+<td>Jump stitch</td>
+</tr>
+<tr>
+<td><code>0x84</code></td>
+<td>Color change</td>
+</tr>
+<tr>
+<td><code>0x88</code></td>
+<td>Cut?<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></td>
+</tr>
+<tr>
+<td><code>0x90</code></td>
+<td>Last stitch in pattern</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stitch-coordinates">Stitch Coordinates</h2>
+<p>These sections are compressed using exactly the same method as Section 1, but they define the X and Y components of the pattern. They each decompress to exactly NumberOfStitches bytes in length. The first byte from Section 2 defines the X-coordinate of the first stitch in the pattern. Likewise, the first byte of Section 3 defines the Y-coordinate. Together with the first byte of Section 1, we get the full definition of the first stitch. Subsequent bytes correspond to one another in the same way.</p>
+<p>The byte values of the second and third sections are signed and represent the relative movement from the previous stitch. These offsets are measured in 0.1mm units. For example, if the first bytes of the sections was <code>0x81, 0x45, 0xC9</code>, this would be interpreted as a <em>Jump Stitch</em> moving <code>X+6.9mm, Y-5.5mm</code>.</p>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p><strong>Jimmy Engström</strong> - For pointing out the existence of the VIP format and how closely it resembled HUS…and for reminding me of this old project lurking on my hard drive. :)</p>
+<hr>
+<p>Copyright <strong>Jason Weiler</strong> 2006. All Rights Reserved.</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Originally there was one magic byte sequence for HUS and one for VIP; however some test HUS files have been found with a combination of the first two VIP bytes and the last two HUS bytes so that option has been added. <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>This table has been updated using information from <a href="https://github.com/Embroidermodder/Embroidermodder/blob/b17693adfd71a7ed171a104d30726491dec3855a/libembroidery/format-hus.h" target="_blank" rel="noopener"><code>libembroidery/format-hus.h</code> in Embroidermodder</a>. The value for <code>0x10</code> was unknown; however in Embroidermodder all the values have been shifted up one to fill that gap. <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>This was derived from a number of files. As to why it is this bizarre calculation I have no idea. <a href="#fnref3" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>This stitch doesn’t have a obvious purpose; however it appeared at the start of a series of jumps making cut a plausible meaning <a href="#fnref4" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/lca2020/">LCA2020</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#file-header-information-same-for-hus-vip"><span class="toc-number">1.</span> <span class="toc-text">File Header Information (Same for HUS &amp; VIP)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#color-information"><span class="toc-number">2.</span> <span class="toc-text">Color information</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hus-color-list"><span class="toc-number">2.1.</span> <span class="toc-text">HUS Color list</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vip-color-table-information-vip-only"><span class="toc-number">2.2.</span> <span class="toc-text">VIP Color table information (VIP Only)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stitch-attributes"><span class="toc-number">3.</span> <span class="toc-text">Stitch Attributes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stitch-coordinates"><span class="toc-number">4.</span> <span class="toc-text">Stitch Coordinates</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#acknowledgements"><span class="toc-number">5.</span> <span class="toc-text">Acknowledgements</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://opal.codes/2019/01/25/HUS-and-VIP-File-Formats/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://opal.codes/2019/01/25/HUS-and-VIP-File-Formats/&text=HUS and VIP File Formats" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://opal.codes/2019/01/25/HUS-and-VIP-File-Formats/&title=HUS and VIP File Formats" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://opal.codes/2019/01/25/HUS-and-VIP-File-Formats/&is_video=false&description=HUS and VIP File Formats" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=HUS and VIP File Formats&body=Check out this article: https://opal.codes/2019/01/25/HUS-and-VIP-File-Formats/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://opal.codes/2019/01/25/HUS-and-VIP-File-Formats/&title=HUS and VIP File Formats" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://opal.codes/2019/01/25/HUS-and-VIP-File-Formats/&title=HUS and VIP File Formats" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://opal.codes/2019/01/25/HUS-and-VIP-File-Formats/&title=HUS and VIP File Formats" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://opal.codes/2019/01/25/HUS-and-VIP-File-Formats/&title=HUS and VIP File Formats" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://opal.codes/2019/01/25/HUS-and-VIP-File-Formats/&name=HUS and VIP File Formats&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://opal.codes/2019/01/25/HUS-and-VIP-File-Formats/&t=HUS and VIP File Formats" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Opal Symes
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/lca2020/">LCA2020</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
