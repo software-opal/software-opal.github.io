@@ -40,10 +40,10 @@ categories:
 | 0x29 | 1 byte | Unknown BYTE |
 | 0x30 | 1 byte | Unknown BYTE |
 | Centered Hoop Dimensions |
-| 0x31 | 4 bytes | Positive X Hoop dimension in 1000ths of a millimeter |
 | 0x35 | 4 bytes | Negative X Hoop dimension in 1000ths of a millimeter |
-| 0x39 | 4 bytes | Positive Y Hoop dimension in 1000ths of a millimeter |
+| 0x31 | 4 bytes | Positive X Hoop dimension in 1000ths of a millimeter |
 | 0x3D | 4 bytes | Negative Y Hoop dimension in 1000ths of a millimeter |
+| 0x39 | 4 bytes | Positive Y Hoop dimension in 1000ths of a millimeter |
 | 0x41 | 4 bytes | Hoop width in 1000ths of a millimeter |
 | 0x45 | 4 bytes | Hoop height in 1000ths of a millimeter |
 | More Unknowns... |
