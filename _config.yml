@@ -114,6 +114,7 @@ theme_config:
   nav:
     Home: /
     Writing: /archives/
+    LCA2020: /lca2020/
   logo:
     enabled: true
     width: 60
