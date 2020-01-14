@@ -8,4 +8,4 @@ tags:
   - Diversity & Inclusion
 ---
 
-You can find the [draft slides for my talk, as a PDF, here](./index/collecting-information-with-care-draft-2020-01-10.pdf) and below are a list of sources and links to the websites listed in the slides.
+You can find the [draft slides for my talk, as a PDF, here](./index/collecting-information-with-care-draft-2020-01-14.pdf) and below are a list of sources and links to the websites listed in the slides.
