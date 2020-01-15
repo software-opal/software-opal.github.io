@@ -28,7 +28,6 @@ Below are a list of the links I listed in the slides, and some of the references
 - WGEA
   - Reference guide - https://www.wgea.gov.au/sites/default/files/documents/WGEA-Reference-Guide-2019-v4.0.pdf#page=16
   - Some extra background - https://twitter.com/excitedleigh/status/1189681196587835392
-  -
 
 Further watching(I will expand this with some of the awesome talks at LCA2020):
 
