@@ -103,7 +103,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#file-header-information"><span class="toc-number">1.</span> <span class="toc-text">File Header Information</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hoop-configuration"><span class="toc-number">2.</span> <span class="toc-text">Hoop Configuration</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stitch-section-header"><span class="toc-number">3.</span> <span class="toc-text">Stitch Section Header</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#color-section"><span class="toc-number">4.</span> <span class="toc-text">Color Section</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#color-section-header"><span class="toc-number">4.1.</span> <span class="toc-text">Color Section Header</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#color-section-body"><span class="toc-number">4.2.</span> <span class="toc-text">Color Section Body</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#special-stitches"><span class="toc-number">5.</span> <span class="toc-text">Special Stitches</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#File-Header-Information"><span class="toc-number">1.</span> <span class="toc-text">File Header Information</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hoop-Configuration"><span class="toc-number">2.</span> <span class="toc-text">Hoop Configuration</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stitch-Section-Header"><span class="toc-number">3.</span> <span class="toc-text">Stitch Section Header</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Color-Section"><span class="toc-number">4.</span> <span class="toc-text">Color Section</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Color-Section-Header"><span class="toc-number">4.1.</span> <span class="toc-text">Color Section Header</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Color-Section-Body"><span class="toc-number">4.2.</span> <span class="toc-text">Color Section Body</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Special-Stitches"><span class="toc-number">5.</span> <span class="toc-text">Special Stitches</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -149,8 +149,8 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p><a href="https://www.jasonweiler.com/VP3FileFormatInfo.html" title="Permalink to VP3 Embroidery File Format" target="_blank" rel="noopener">Source</a></p>
-<h2 id="file-header-information">File Header Information</h2>
+    <p><a href="https://www.jasonweiler.com/VP3FileFormatInfo.html" target="_blank" rel="noopener" title="Permalink to VP3 Embroidery File Format">Source</a></p>
+<h2 id="File-Header-Information">File Header Information</h2>
 <table>
 <thead>
 <tr>
@@ -202,7 +202,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="hoop-configuration">Hoop Configuration</h2>
+<h2 id="Hoop-Configuration">Hoop Configuration</h2>
 <table>
 <thead>
 <tr>
@@ -359,7 +359,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="stitch-section-header">Stitch Section Header</h2>
+<h2 id="Stitch-Section-Header">Stitch Section Header</h2>
 <table>
 <thead>
 <tr>
@@ -391,9 +391,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="color-section">Color Section</h2>
+<h2 id="Color-Section">Color Section</h2>
 <p>Each color is composed of a single color section header followed by a single color section body.</p>
-<h3 id="color-section-header">Color Section Header</h3>
+<h3 id="Color-Section-Header">Color Section Header</h3>
 <table>
 <thead>
 <tr>
@@ -520,7 +520,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="color-section-body">Color Section Body</h3>
+<h3 id="Color-Section-Body">Color Section Body</h3>
 <p>The number of stitches can be approximated by subtracting 3 from<br>
 the number of stitch bytes (SB) above, and the dividing by 2.<br>
 Unfortunately, this is only a approximation of the number of stitches in<br>
@@ -530,7 +530,7 @@ than this calculation due to special stitches.</p>
 represented as two sequential bytes. The first byte represents the<br>
 X-component of the stitch as a signed integer in 10th of a millimeter,<br>
 and the second byte represents the Y-component.</p>
-<h2 id="special-stitches">Special Stitches</h2>
+<h2 id="Special-Stitches">Special Stitches</h2>
 <p>When either the X component of the stitch has the value of 0x80<br>
 then we have a special stitch. The Y-component of the special stitch<br>
 tells us how to handle it. When Y is 0x00 or 0x03, the special stitch is<br>
@@ -568,7 +568,7 @@ same position where the current one left off.</p>
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#file-header-information"><span class="toc-number">1.</span> <span class="toc-text">File Header Information</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hoop-configuration"><span class="toc-number">2.</span> <span class="toc-text">Hoop Configuration</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stitch-section-header"><span class="toc-number">3.</span> <span class="toc-text">Stitch Section Header</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#color-section"><span class="toc-number">4.</span> <span class="toc-text">Color Section</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#color-section-header"><span class="toc-number">4.1.</span> <span class="toc-text">Color Section Header</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#color-section-body"><span class="toc-number">4.2.</span> <span class="toc-text">Color Section Body</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#special-stitches"><span class="toc-number">5.</span> <span class="toc-text">Special Stitches</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#File-Header-Information"><span class="toc-number">1.</span> <span class="toc-text">File Header Information</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hoop-Configuration"><span class="toc-number">2.</span> <span class="toc-text">Hoop Configuration</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stitch-Section-Header"><span class="toc-number">3.</span> <span class="toc-text">Stitch Section Header</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Color-Section"><span class="toc-number">4.</span> <span class="toc-text">Color Section</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Color-Section-Header"><span class="toc-number">4.1.</span> <span class="toc-text">Color Section Header</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Color-Section-Body"><span class="toc-number">4.2.</span> <span class="toc-text">Color Section Body</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Special-Stitches"><span class="toc-number">5.</span> <span class="toc-text">Special Stitches</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

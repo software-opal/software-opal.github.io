@@ -105,7 +105,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#file-header-information-same-for-hus-vip"><span class="toc-number">1.</span> <span class="toc-text">File Header Information (Same for HUS &amp; VIP)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#color-information"><span class="toc-number">2.</span> <span class="toc-text">Color information</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hus-color-list"><span class="toc-number">2.1.</span> <span class="toc-text">HUS Color list</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vip-color-table-information-vip-only"><span class="toc-number">2.2.</span> <span class="toc-text">VIP Color table information (VIP Only)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stitch-attributes"><span class="toc-number">3.</span> <span class="toc-text">Stitch Attributes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stitch-coordinates"><span class="toc-number">4.</span> <span class="toc-text">Stitch Coordinates</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#acknowledgements"><span class="toc-number">5.</span> <span class="toc-text">Acknowledgements</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#File-Header-Information-Same-for-HUS-VIP"><span class="toc-number">1.</span> <span class="toc-text">File Header Information (Same for HUS &amp; VIP)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Color-information"><span class="toc-number">2.</span> <span class="toc-text">Color information</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HUS-Color-list"><span class="toc-number">2.1.</span> <span class="toc-text">HUS Color list</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VIP-Color-table-information-VIP-Only"><span class="toc-number">2.2.</span> <span class="toc-text">VIP Color table information (VIP Only)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stitch-Attributes"><span class="toc-number">3.</span> <span class="toc-text">Stitch Attributes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stitch-Coordinates"><span class="toc-number">4.</span> <span class="toc-text">Stitch Coordinates</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Acknowledgements"><span class="toc-number">5.</span> <span class="toc-text">Acknowledgements</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -146,8 +146,8 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p>This file has been taken from <a href="http://www.jasonweiler.com/HUSandVIPFileFormatInfo.html" title="Permalink to HUS and VIP Embroidery File Formats" target="_blank" rel="noopener">Jason Weiler</a> and updated using information from <a href="https://embroidermodder.org" target="_blank" rel="noopener">Embroidermodder</a> and <a href="https://community.kde.org/Projects/Liberty/Introduction" target="_blank" rel="noopener">KDE’s Liberty project</a> as well as some of my own work.</p>
-<h2 id="file-header-information-same-for-hus-vip">File Header Information (Same for HUS &amp; VIP)</h2>
+    <p>This file has been taken from <a href="http://www.jasonweiler.com/HUSandVIPFileFormatInfo.html" target="_blank" rel="noopener" title="Permalink to HUS and VIP Embroidery File Formats">Jason Weiler</a> and updated using information from <a href="https://embroidermodder.org" target="_blank" rel="noopener">Embroidermodder</a> and <a href="https://community.kde.org/Projects/Liberty/Introduction" target="_blank" rel="noopener">KDE’s Liberty project</a> as well as some of my own work.</p>
+<h2 id="File-Header-Information-Same-for-HUS-VIP">File Header Information (Same for HUS &amp; VIP)</h2>
 <p>Note: Multibyte values are stored in <a href="https://en.wikipedia.org/wiki/Endianness#Little-endian" target="_blank" rel="noopener">little-endian</a>.</p>
 <table>
 <thead>
@@ -220,9 +220,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="color-information">Color information</h2>
+<h2 id="Color-information">Color information</h2>
 <p>As with most embroidery formats, the first color is used for all the stitches up until the first color change; then the 2nd and so on.</p>
-<h3 id="hus-color-list">HUS Color list</h3>
+<h3 id="HUS-Color-list">HUS Color list</h3>
 <table>
 <thead>
 <tr>
@@ -397,7 +397,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="vip-color-table-information-vip-only">VIP Color table information (VIP Only)</h3>
+<h3 id="VIP-Color-table-information-VIP-Only">VIP Color table information (VIP Only)</h3>
 <table>
 <thead>
 <tr>
@@ -429,7 +429,7 @@
 7D 6F 00 00  FE BA 35 00  13 4A 46 00
 </code></pre>
 <p>The decoding algorithm is actually quite simple:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">BYTE prevByte = 0</span><br><span class="line">BYTE tmpByte = 0;</span><br><span class="line">for (i=0; i &lt; NumberOfColors*4; ++i)</span><br><span class="line">&#123;</span><br><span class="line">   tmpByte = INPUT[i] ^ TABLE[i];</span><br><span class="line">   OUTPUT[i] = tmpByte ^ prevByte;</span><br><span class="line">   prevByte = INPUT[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">BYTE prevByte &#x3D; 0</span><br><span class="line">BYTE tmpByte &#x3D; 0;</span><br><span class="line">for (i&#x3D;0; i &lt; NumberOfColors*4; ++i)</span><br><span class="line">&#123;</span><br><span class="line">   tmpByte &#x3D; INPUT[i] ^ TABLE[i];</span><br><span class="line">   OUTPUT[i] &#x3D; tmpByte ^ prevByte;</span><br><span class="line">   prevByte &#x3D; INPUT[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>where:</p>
 <p><code>INPUT</code> and <code>OUTPUT</code> represent the encoded file bytes and the decoded output bytes <code>TABLE</code> represents a fixed set of values defined as:</p>
 <pre><code>2E 82 E4 6F  38 A9 DC C6  7B B6 28 AC  FD AA 8A 4E
@@ -458,7 +458,7 @@ A4 89 0C 1B  F0 A1 DF E1  9E 3C 04 78  E4 AB 6D FF
 1D 71 06 B1  C5 E2 CF 13  77 81 C5 B7  0A 14 0A 6B
 40 26 A0 88  D1 62 6A B3  50 12 B9 9B  B5 83 9B 37
 </code></pre>
-<h2 id="stitch-attributes">Stitch Attributes</h2>
+<h2 id="Stitch-Attributes">Stitch Attributes</h2>
 <p>Section 1 defines the per-stitch attributes of the pattern. This section is generally much smaller than the other two, but that’s only because the data in this section compresses more readily than in the others. The section is compressed using the proprietary ArchiveLib compression library made by <a href="http://www.greenleafsoft.com" target="_blank" rel="noopener">Greenleaf Software</a>. This library supports several different compression schemes, but the one used in this case is called AL_GREENLEAF_LEVEL_4. Once decompressed, the data should be exactly NumberOfStitches bytes in length with each byte sequentially representing one stitch of the pattern.</p>
 <table>
 <thead>
@@ -490,23 +490,23 @@ A4 89 0C 1B  F0 A1 DF E1  9E 3C 04 78  E4 AB 6D FF
 </tr>
 </tbody>
 </table>
-<h2 id="stitch-coordinates">Stitch Coordinates</h2>
+<h2 id="Stitch-Coordinates">Stitch Coordinates</h2>
 <p>These sections are compressed using exactly the same method as Section 1, but they define the X and Y components of the pattern. They each decompress to exactly NumberOfStitches bytes in length. The first byte from Section 2 defines the X-coordinate of the first stitch in the pattern. Likewise, the first byte of Section 3 defines the Y-coordinate. Together with the first byte of Section 1, we get the full definition of the first stitch. Subsequent bytes correspond to one another in the same way.</p>
 <p>The byte values of the second and third sections are signed and represent the relative movement from the previous stitch. These offsets are measured in 0.1mm units. For example, if the first bytes of the sections was <code>0x81, 0x45, 0xC9</code>, this would be interpreted as a <em>Jump Stitch</em> moving <code>X+6.9mm, Y-5.5mm</code>.</p>
-<h2 id="acknowledgements">Acknowledgements</h2>
+<h2 id="Acknowledgements">Acknowledgements</h2>
 <p><strong>Jimmy Engström</strong> - For pointing out the existence of the VIP format and how closely it resembled HUS…and for reminding me of this old project lurking on my hard drive. :)</p>
 <hr>
 <p>Copyright <strong>Jason Weiler</strong> 2006. All Rights Reserved.</p>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>Originally there was one magic byte sequence for HUS and one for VIP; however some test HUS files have been found with a combination of the first two VIP bytes and the last two HUS bytes so that option has been added. <a href="#fnref1" class="footnote-backref">↩</a></p>
+<li id="fn1" class="footnote-item"><p>Originally there was one magic byte sequence for HUS and one for VIP; however some test HUS files have been found with a combination of the first two VIP bytes and the last two HUS bytes so that option has been added. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn2" class="footnote-item"><p>This table has been updated using information from <a href="https://github.com/Embroidermodder/Embroidermodder/blob/b17693adfd71a7ed171a104d30726491dec3855a/libembroidery/format-hus.h" target="_blank" rel="noopener"><code>libembroidery/format-hus.h</code> in Embroidermodder</a>. The value for <code>0x10</code> was unknown; however in Embroidermodder all the values have been shifted up one to fill that gap. <a href="#fnref2" class="footnote-backref">↩</a></p>
+<li id="fn2" class="footnote-item"><p>This table has been updated using information from <a href="https://github.com/Embroidermodder/Embroidermodder/blob/b17693adfd71a7ed171a104d30726491dec3855a/libembroidery/format-hus.h" target="_blank" rel="noopener"><code>libembroidery/format-hus.h</code> in Embroidermodder</a>. The value for <code>0x10</code> was unknown; however in Embroidermodder all the values have been shifted up one to fill that gap. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn3" class="footnote-item"><p>This was derived from a number of files. As to why it is this bizarre calculation I have no idea. <a href="#fnref3" class="footnote-backref">↩</a></p>
+<li id="fn3" class="footnote-item"><p>This was derived from a number of files. As to why it is this bizarre calculation I have no idea. <a href="#fnref3" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn4" class="footnote-item"><p>This stitch doesn’t have a obvious purpose; however it appeared at the start of a series of jumps making cut a plausible meaning <a href="#fnref4" class="footnote-backref">↩</a></p>
+<li id="fn4" class="footnote-item"><p>This stitch doesn’t have a obvious purpose; however it appeared at the start of a series of jumps making cut a plausible meaning <a href="#fnref4" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
@@ -533,7 +533,7 @@ A4 89 0C 1B  F0 A1 DF E1  9E 3C 04 78  E4 AB 6D FF
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#file-header-information-same-for-hus-vip"><span class="toc-number">1.</span> <span class="toc-text">File Header Information (Same for HUS &amp; VIP)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#color-information"><span class="toc-number">2.</span> <span class="toc-text">Color information</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hus-color-list"><span class="toc-number">2.1.</span> <span class="toc-text">HUS Color list</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vip-color-table-information-vip-only"><span class="toc-number">2.2.</span> <span class="toc-text">VIP Color table information (VIP Only)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stitch-attributes"><span class="toc-number">3.</span> <span class="toc-text">Stitch Attributes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stitch-coordinates"><span class="toc-number">4.</span> <span class="toc-text">Stitch Coordinates</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#acknowledgements"><span class="toc-number">5.</span> <span class="toc-text">Acknowledgements</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#File-Header-Information-Same-for-HUS-VIP"><span class="toc-number">1.</span> <span class="toc-text">File Header Information (Same for HUS &amp; VIP)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Color-information"><span class="toc-number">2.</span> <span class="toc-text">Color information</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HUS-Color-list"><span class="toc-number">2.1.</span> <span class="toc-text">HUS Color list</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VIP-Color-table-information-VIP-Only"><span class="toc-number">2.2.</span> <span class="toc-text">VIP Color table information (VIP Only)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stitch-Attributes"><span class="toc-number">3.</span> <span class="toc-text">Stitch Attributes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stitch-Coordinates"><span class="toc-number">4.</span> <span class="toc-text">Stitch Coordinates</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Acknowledgements"><span class="toc-number">5.</span> <span class="toc-text">Acknowledgements</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
