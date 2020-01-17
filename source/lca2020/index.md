@@ -8,7 +8,7 @@ tags:
   - Diversity & Inclusion
 ---
 
-You can find the [slides for my talk](./index/collecting-information-with-care-2020-01-15.pdf), and [the notes version too](./index/collecting-information-with-care-notes-2020-01-15.pdf).
+You can find the [slides for my talk](./index/collecting-information-with-care-2020-01-15.pdf), and [the notes version too](./index/collecting-information-with-care-notes-2020-01-15.pdf). The [video of the talk is on YouTube](https://www.youtube.com/watch?v=nREqxnZagbo)(thanks to the conference and NextDayVideo for getting it up so quickly).
 
 Below are a list of the links I listed in the slides, and some of the references for this talk(sorry it's a bit of a mess, it's late and I have to talk tomorrow)
 
